@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        unity-tag: [2020.1.0b15]
+        unity-tag: [2019.4.4f1]
 
     container: docker://gableroux/unity3d:${{ matrix.unity-tag }}
 
