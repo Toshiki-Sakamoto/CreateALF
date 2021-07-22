@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        unity-tag: [2021.1.15f1]
+        unity-tag: [2021.1.15f1-base-0]
 
     container: docker://unityci/editor:${{ matrix.unity-tag }}
 
