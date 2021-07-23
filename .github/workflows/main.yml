@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - run: mkdir artifact
-    - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -logfile -createManualActivationFile || exit 0
+    - run: /opt/Unity/Editor -quit -batchmode -nographics -logfile -createManualActivationFile || exit 0
     - run: cp "Unity_v$UNITY_VERSION.alf" artifact
       env:
         UNITY_VERSION: 2021.1.15f1 #${{ matrix.unity-tag }}
