@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        unity-tag: [ubuntu-2021.1.15f1-mac-mono-0.14.0]
+        unity-tag: [2021.1.15f1-mac-mono-0]
 
     container: docker://unityci/editor:${{ matrix.unity-tag }}
 
     steps:
     - run: mkdir artifact
-    - run: /opt/Unity/Editor -quit -batchmode -nographics -logfile -createManualActivationFile || exit 0
+    - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -logfile -createManualActivationFile || exit 0
     - run: cp "Unity_v$UNITY_VERSION.alf" artifact
       env:
         UNITY_VERSION: 2021.1.15f1 #${{ matrix.unity-tag }}
